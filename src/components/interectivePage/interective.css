@@ -1,62 +1,98 @@
 .Interactive{
     background: url("../../assets/img/back.jpg") no-repeat center;
     height: 500px;
+
     display: flex;
     position: relative;
 
-}
-
-.carouselContainer{
 
 }
 .animation{
     position: absolute;
-    left: 270px;
+    left: 0px;
     width: 250px;
     height: 100%;
-    border-radius: 20px;
     background-color: black;
-}
-.animation.entering{
-    animation: show-categories 3s forwards;
-}
-.animation.entered{
+    z-index: 1;
+    color: white;
+    box-shadow: 7px 7px 7px grey;
 
 }
+
+@keyframes show {
+    0%{
+        left: 0px;
+
+    }
+    100%{
+        left: 270px;
+    }
+}
+
+.animation.entering{
+    animation: show 1s forwards;
+
+}
+.animation.entered{
+    left: 270px;
+}
+
 .animation.exiting{
+    animation: show 1s reverse;
 
 }
 .animation.exited{
 
 }
 
-@keyframes show-categories {
-    0%{
-        opacity: 0;
-        transform: translateX(-270px);
-    }
-    50%{
-        opacity: 1;
-    }
-    100%{
-        transform: translateX(270px);
-    }
 
-}
-
-.categories{
+.getCategories{
     width: 250px;
     height: 100%;
     background-color: #828283;
-    border-radius: 20px;
+    box-shadow: 7px 7px 7px black;
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 2;
 }
-.categories button{
+.getCategories button{
     background-color: black;
     padding: 10px;
     border-radius: 10px;
     color: white;
+    width: 150px;
 }
+
+.Carousel{
+
+}
+.CarouselItem{
+    border-radius: 20px;
+}
+
+.nameOfCategorie{
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    filter: grayscale(100%);
+}
+
+.backdrop{
+    width: 250px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0, 0.5);
+    font-size: 20px;
+    color: white;
+}
+
+
+
+
+
+
 

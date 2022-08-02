@@ -1,9 +1,9 @@
 import React from 'react';
-import styles from './Card.module.css'
+import styles from './Login.module.css'
 
 const Login = () => {
     return (
-        <div>
+        <div className={styles.loginWrapper}>
             Login
         </div>
     );

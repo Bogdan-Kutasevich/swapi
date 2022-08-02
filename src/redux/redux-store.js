@@ -1,16 +1,11 @@
 import {combineReducers, createStore} from "redux";
-import dialogsReducer from "./dialogsReducer";
-import wallReducer from "./WallReducer";
-import friendsReducer from "./friendsReducer";
+import categoriesReducer from "./categoriesReducer";
+
 
 let reducers = combineReducers({
-    dialogsPage: dialogsReducer,
-    wallPage: wallReducer,
-    friendsPage: friendsReducer
+    Categories: categoriesReducer,
 } );
 
 let store = createStore(reducers);
-
-
 
 export default store

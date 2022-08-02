@@ -1,7 +1,11 @@
-.Header{
-
-    color: black;
-    height: 100px;
+.Crumbs{
+    height: 70px;
     width: 100%;
-    border: 1px solid red;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.Link{
+    color: black;
+    margin-left: 5px;
 }

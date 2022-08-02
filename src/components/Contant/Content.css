@@ -1,6 +1,28 @@
-.Contant{
-    height: 500px;
+.cardsWrapper{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.itemCard{
+
+}
+.Loader{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.pagination{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    font-size: 24px;
+}
+.page{
+    cursor: pointer;
+    margin-left: 3px;
+}
+.page-active{
+    color: red;
 }

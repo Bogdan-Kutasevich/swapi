@@ -1,7 +1,108 @@
-.Header{
-    position: fixed;
-    color: black;
-    height: 100px;
+.headerContainer{
+
+    height: 80px;
     width: 100%;
-    border: 1px solid red;
+
+}
+.Header{
+    color: black;
+    height: 80px;
+    width: 100%;
+
+}
+
+.navMenu{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.navMenu img{
+    width: 40px;
+    height: 40px;
+}
+
+.navMenu button{
+    color: black;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.header_home{
+    margin-left: 20px;
+    flex-grow: 1;
+}
+.header_home a{
+    color: black;
+
+}
+.header_home a:hover{
+    text-decoration: underline;
+}
+
+.login{
+    background-color: white;
+    color: black;
+    margin-right: 20px;
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 10px;
+}
+.burgerHeader{
+    color: white;
+    height: 80px;
+    width: 50px;
+    left: 5px;
+    top: 5px;
+    position: fixed;
+    z-index: 10;
+    animation: burger 1s linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes burger {
+   0%{
+
+    opacity: 0;
+   }
+    100%{
+
+    opacity: 1;
+    }
+}
+
+
+
+.up{
+    position: fixed;
+    width: 100px;
+    height: 100px;
+    right: 0;
+    bottom: 0;
+}
+.up img{
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
+
+.modal{
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0,0,0,0.4);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 15;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal_content{
+    padding: 20px;
+    border-radius: 12px;
+    background-color: white;
+    height: 200px;
+    width: 300px;
 }

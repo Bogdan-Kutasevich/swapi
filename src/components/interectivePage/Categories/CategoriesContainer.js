@@ -1,13 +1,21 @@
-import styles from './Categories.module.css'
-import React from "react";
+import {setCategoriesAC} from "../../../redux/categoriesReducer"
+import {connect} from "react-redux";
+import Categories from "./Categories";
 
-
-const Categories = () => {
-    return (
-        <div className={styles.Categories}>
-            Categories
-        </div>
-    );
+const mapStateToProps = (state)=>{
+    return{
+        state:state.Categories,
+    }
 }
 
-export default Categories;
+const mapDispatchToProps = (dispatch)=>{
+    return{
+        setCategories:(categories) => {
+            dispatch(setCategoriesAC(categories));
+        },
+    }
+}
+const CategoriesContainer = connect(mapStateToProps, mapDispatchToProps)(Categories)
+
+export default CategoriesContainer;
+

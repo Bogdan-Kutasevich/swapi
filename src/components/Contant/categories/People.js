@@ -1,15 +1,29 @@
 import React from 'react';
+import Card from "../../Card/Card";
+import '../Content.css'
 
-const Films = ({items}) => {
+const People = ({items}) => {
+
     return (
-        <div>
-            <h1>Hello</h1>
-            {items.map(item=>{
-
-                return (<div key={item.release_date}>{item.title}</div>)
-            })}
-        </div>
+        <>
+            <h1>People</h1>
+            <div className='cardsWrapper'>
+                {items.map(item=>{
+                    return (
+                        <Card className='itemCard' key={item.height}>
+                            <div key={item.height}>
+                                <div>{item.name}</div>
+                                <div>{item.gender}</div>
+                                <div>{item.height}</div>
+                                <div>{item.mass}</div>
+                                <div>{item.birth_year}</div>
+                            </div>
+                        </Card>
+                    )
+                })}
+            </div>
+        </>
     );
 };
 
-export default Films;
+export default People;

@@ -1,15 +1,21 @@
 import React from 'react';
+import Card from "../../Card/Card";
 
-const Films = ({items}) => {
+const StarShips = ({items}) => {
     return (
-        <div>
-            <h1>Hello</h1>
-            {items.map(item=>{
-
-                return (<div key={item.release_date}>{item.title}</div>)
-            })}
-        </div>
+        <>
+            <h1>Starships</h1>
+            <div className='cardsWrapper'>
+                {items.map(item=>{
+                    return (
+                        <Card className='itemCard' key={item.edited}>
+                            <div>{item.name}</div>
+                        </Card>
+                    )
+                })}
+            </div>
+        </>
     );
 };
 
-export default Films;
+export default StarShips;

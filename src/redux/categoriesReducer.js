@@ -1,46 +1,31 @@
-const ADD_POST = 'ADD_POST'
-const UPDATE_TEXT_AREA = 'UPDATE_TEXT_AREA'
+const SET_CATEGORIES = 'SET_CATEGORIES'
 
 let initialState = {
-    posts:[
-        {id:1, value:'text1', likes:0},
-        {id:2, value:'text2', likes:1},
-    ],
-    currentValueOfPost: 'Введите текст',
+    categories:[]
 }
 
-const contentReducer = (state = initialState, action) => {
+const categoriesReducer = (state = initialState, action) => {
 
     switch (action.type) {
-        case ADD_POST:
-            let value = state.currentValueOfPost
-            return {
-               ...state,
-                posts: [...state.posts, {id:state.posts.length+1, value:value, likes:0}],
-                currentValueOfPost: '',
-            }
-        case UPDATE_TEXT_AREA:
-            return {
+        case SET_CATEGORIES:
+
+            return{
                 ...state,
-                currentValueOfPost: action.text
+                categories: action.categories,
             }
+
+
         default:
             return state
     }
 }
 
-export const addPostActionCreator = ()=>{
+export const setCategoriesAC = (categories)=>{
+
     return {
-        type: ADD_POST,
+        type: SET_CATEGORIES,
+        categories
     }
 }
 
-export const updateTextAreaActionCreator = (text)=>{
-    return {
-        type: UPDATE_TEXT_AREA,
-        text: text
-
-    }
-}
-
-export default contentReducer
+export default categoriesReducer
