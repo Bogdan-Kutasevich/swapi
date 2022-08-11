@@ -14,9 +14,9 @@ const Crumbs = () => {
             {breadcrumbs.map(({ breadcrumb }) => {
 
                 return (
-                    <span key={breadcrumb.key}>
+                    <div className={styles.linkContainer} key={breadcrumb.key}>
                         <Link to={breadcrumb.key} className={styles.Link}> {`/ ${breadcrumb.props.children}`} </Link>
-                    </span>
+                    </div>
                 )
             })}
         </div>

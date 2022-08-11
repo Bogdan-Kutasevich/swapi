@@ -1,7 +1,7 @@
 import styles from './Header.module.css'
 import React, {useEffect, useState} from "react";
 import MenuBurger from "./MenuBurger/MenuBurger";
-import logo from './header.svg'
+import logo from './logo.png'
 import arrow from './arrow.png'
 import {Link} from "react-router-dom";
 
@@ -49,7 +49,14 @@ const Header = () => {
                         className={styles.login}
                         onClick={()=>setModal(!modal)}
                     >
-                        Login
+                        SIGN IN
+                    </button>
+                    <button
+                        to='login'
+                        className={styles.login}
+                        onClick={()=>setModal(!modal)}
+                    >
+                        LOGIN
                     </button>
 
                 </div>}

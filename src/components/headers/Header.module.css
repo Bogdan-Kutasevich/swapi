@@ -1,11 +1,11 @@
 .headerContainer{
-
-    height: 80px;
+    height: 70px;
     width: 100%;
+    border-bottom: 1px solid orange;
 
 }
 .Header{
-    color: black;
+    color: white;
     height: 80px;
     width: 100%;
 
@@ -19,14 +19,8 @@
     justify-content: flex-start;
 }
 .navMenu img{
-    width: 40px;
-    height: 40px;
-}
-
-.navMenu button{
-    color: black;
-    font-size: 2rem;
-    font-weight: 600;
+    width: 70px;
+    height: 70px;
 }
 
 .header_home{
@@ -34,23 +28,24 @@
     flex-grow: 1;
 }
 .header_home a{
-    color: black;
-
-}
-.header_home a:hover{
-    text-decoration: underline;
+    color: white;
+    font-size: 18px;
+    border: 1px solid orange;
+    padding: 10px;
+    border-radius: 20px;
 }
 
 .login{
-    background-color: white;
-    color: black;
-    margin-right: 20px;
-    border: 1px solid black;
-    padding: 5px;
-    border-radius: 10px;
-}
-.burgerHeader{
+    background-color: black;
     color: white;
+    font-size: 18px;
+    margin-right: 20px;
+    border: 1px solid orange;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.burgerHeader{
     height: 80px;
     width: 50px;
     left: 5px;

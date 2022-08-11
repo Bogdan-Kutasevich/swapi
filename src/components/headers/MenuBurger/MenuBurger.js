@@ -1,6 +1,6 @@
 import styles from './MenuBurger.module.css'
 import React, {useState} from "react";
-import burgerIcon from './MenuIcon.png'
+import burgerIcon from './Icon.png'
 import {Link} from "react-router-dom";
 
 const MenuBurger = () => {

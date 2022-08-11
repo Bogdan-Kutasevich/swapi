@@ -1,0 +1,10 @@
+.moreInfoMain{
+    height: 600px;
+    width: 100%;
+    background-color: orange;
+    position: absolute;
+}
+.InfoIMG{
+    width: 400px;
+    height: 400px;
+}

@@ -2,9 +2,10 @@
     display: flex;
     align-items: flex-start;
     width: 400px;
+    color: orange;
 }
 .MenuBurger button{
-    background-color: white;
+
 }
 .MenuBurger img{
     height: 25px;

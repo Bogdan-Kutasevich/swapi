@@ -1,0 +1,31 @@
+.CardWrapper{
+    display: flex;
+    flex-direction: column;
+}
+
+.mainCard{
+    width: 100px;
+    height: 100px;
+    color: white;
+    cursor: pointer;
+    transition: width 0.5s, height 0.5s;
+    margin-left: 20px;
+}
+.mainCard:hover{
+    width: 120px;
+    height: 120px;
+}
+
+
+.children{
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    margin-top: 40%;
+    background: rgba(0,0,0,0.7);
+    text-align: center;
+}
+
