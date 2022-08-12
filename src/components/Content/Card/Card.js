@@ -20,7 +20,7 @@ const Card = ({item, setAbout, setClassChange, classChange}) => {
     }
 
     return (
-        <div to='planet' className={styles.mainCard} onClick={changePlanet}
+        <div className={styles.mainCard} onClick={changePlanet}
              style={{backgroundImage: `url(${item.image})`, backgroundSize:'cover', backgroundRepeat:'no-repeat'}}>
             <div className={styles.children}>
                 {item.name}

@@ -1,0 +1,14 @@
+/*Pagination block*/
+.pagination{
+    display: flex;
+    font-size: 24px;
+    margin: 0 auto;
+}
+.page-active{
+    color: orange;
+    margin-left: 10px;
+}
+.page{
+    cursor: pointer;
+    margin-left: 10px;
+}

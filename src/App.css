@@ -8,8 +8,9 @@
 }
 .ContentMain{
     flex-grow: 1;
-    height: 600px;
+    height: 500px;
     position: relative;
+    border-bottom: 1px solid orange;
 }
 .Footer{
     flex-grow: 0;

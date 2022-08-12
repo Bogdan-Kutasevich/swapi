@@ -1,5 +1,5 @@
 .itemContainer{
-    height: 450px;
+    height: 500px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -7,12 +7,12 @@
     position: relative;
 }
 .Categories {
-    height: 450px;
+    height: 500px;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    filter: grayscale(100);
+    border-bottom: 1px solid orange;
 }
 .itemLink{
     background-color: rgba(0,0,0,0.5);

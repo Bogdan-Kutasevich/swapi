@@ -2,31 +2,32 @@ import React, {useContext} from 'react';
 import './moreInfo.css'
 import {animated, useTransition} from "react-spring";
 import {ObjectContext} from '../../../Context/objectContext'
+import PlanetsInfo from './MoreInfoCategories/Planets/PlanetsInfo'
+import {useParams} from "react-router-dom";
 
 
 const MoreInfo = () => {
 
     const contextData = useContext(ObjectContext)
     const data = contextData.about[0]
-
-
+    const params = useParams()
 
 
     const appear = useTransition (true, {
         from: {left:'-1500px'},
-        enter: {left:'0px', config:{duration:1000}},
+        enter: {left:'0px', config:{duration:500}},
+        leave: {left:'-1500px', config:{duration:500}}
         })
 
     return (
-            <div>
+            <>
+
                 {data && appear((styles) => (
                 <animated.div className='moreInfoMain' style={styles}>
-                    <img className='moreInfoImage' src={data.image} alt="logo"/>
-                    {Object.keys(data).map(item=>{
-                        return (<p key={item}>{item}: {data[item]}</p>)
-                    })}
+                    {(params.categories === 'planets') && <PlanetsInfo data={data}/>}
+
                 </animated.div>))}
-            </div>
+            </>
 
 
     );

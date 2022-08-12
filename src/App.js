@@ -19,7 +19,7 @@ function App() {
                 <Routes>
                     <Route path='/' element={<Categories/>}/>
                     <Route path='/:categories/*' element={<Content/>}/>
-                    <Route path='/:categories/info' element={<MoreInfo/>}/>
+                    <Route path='/:categories/:object' element={<MoreInfo/>}/>
                     <Route path='login' element={<Login/>}/>
                 </Routes>
             </div>

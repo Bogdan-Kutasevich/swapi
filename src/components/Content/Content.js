@@ -11,21 +11,21 @@ import Vehicles from "./categories/Vehicles";
 import Pagination from "../Pagination/pagination";
 import './Content.css'
 import loaderLogo from './loader.gif'
-import {PlanetsImages} from '../../imgLinks/imgLinks'
+import {Images} from '../../imgLinks/imgLinks'
 import About from "./About/About";
 import {PaginationContext} from '../../Context/PaginationContext'
 import {ObjectContext} from "../../Context/objectContext";
 import {useContext} from "react";
 
-
-
-
 const Content = () => {
     const paginationData = useContext(PaginationContext)
     const objectData = useContext(ObjectContext)
-
     const [loader, setLoader] = useState(true)
     const params = useParams()
+
+    useEffect(()=>{
+        paginationData.setCurrentPage(1)
+    },[params.categories])
 
     useEffect(() => {
         setLoader(true)
@@ -36,8 +36,8 @@ const Content = () => {
                 paginationData.setItemPerPage(response.data.results.length)
                 let data = response.data.results
                 data = data.map(elem=>{
-                    let addingImage = elem.name
-                    elem.image = PlanetsImages[addingImage]
+                    let addingImage = elem.name ? elem.name : elem.title
+                    elem.image = Images[addingImage]
                     return elem
                 })
                 return data
@@ -47,7 +47,6 @@ const Content = () => {
                 setLoader(false)
             })
     }, [paginationData.currentPage,params.categories])
-
 
     if (loader) {
         return (

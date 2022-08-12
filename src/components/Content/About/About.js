@@ -11,7 +11,7 @@ const About = () => {
     const classChange = data.classChange
 
     const transitions = useTransition (classChange, {
-        from: {right:'-100px',top:'0px', opacity:0},
+        from: {right:'0px',top:'0px', opacity:0},
         enter: {right:'350px', top:'0px', opacity:1, config:{duration:1000}},
         leave:{opacity:0, config:{duration:0}},
 
@@ -75,7 +75,7 @@ const About = () => {
                             {aboutSecond.cost_in_credits && <p>Cost in credits: {aboutFirst.aboutSecond}</p>}
                             {aboutSecond.manufacturer && <p>Manufacturer: {aboutFirst.aboutSecond}</p>}
                         </animated.div>))}
-            {aboutFirst && <Link to='info' className='about_btn'>read more</Link>}
+            {aboutFirst && <Link to={aboutFirst.name?aboutFirst.name:aboutFirst.title} className='about_btn'>read more</Link>}
             </div>
     );
 };

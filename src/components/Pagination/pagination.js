@@ -1,5 +1,6 @@
 import React, {useContext} from 'react';
 import {PaginationContext} from '../../Context/PaginationContext'
+import './pagination.css'
 
 
 const Pagination = () => {
