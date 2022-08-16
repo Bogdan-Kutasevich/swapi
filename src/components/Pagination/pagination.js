@@ -1,21 +1,24 @@
-import React, {useContext} from 'react';
-import {PaginationContext} from '../../Context/PaginationContext'
+import React from 'react';
 import './pagination.css'
 
 
-const Pagination = () => {
-    const paginationData = useContext(PaginationContext)
+
+const Pagination = ({currentPage, setCurrentPage, numberOfPages}) => {
+
+
+
     const pages = []
-    for (let i=1; i<=paginationData.numberOfPages; i++){
+    for (let i=1; i<=numberOfPages; i++){
         pages.push(i)
     }
+
 
     return (
         <div className='pagination'>
             {pages.map(page=>(
-                <div className={(paginationData.currentPage === page)?'page-active':'page'}
+                <div className={(currentPage === page)?'page-active':'page'}
                      key={page}
-                     onClick={()=>paginationData.setCurrentPage(page)}>
+                     onClick={()=>{setCurrentPage(page)}}>
                     {page}
                 </div>
             ))}

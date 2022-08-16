@@ -1,13 +1,13 @@
-import './categories.css'
+import './ChooseCategories.css'
 import React, {useState, useEffect} from "react";
 import {NavLink} from "react-router-dom";
 import Carousel from "react-bootstrap/Carousel";
 import Requests from '../../requests/requests'
 import {categoriesImages} from '../../imgLinks/imgLinks'
-import loaderLogo from "../Content/loader.gif";
+import loaderLogo from "../../assets/loader.gif"
 
 
-const Categories = () => {
+const ChooseCategories = () => {
     const [loader, setLoader] = useState(true)
     const [categories, setCategories] = useState([])
 
@@ -58,4 +58,4 @@ const Categories = () => {
 }
 
 
-export default Categories;
+export default ChooseCategories;

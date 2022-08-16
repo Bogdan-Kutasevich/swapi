@@ -1,4 +1,4 @@
-/*Categories block*/
+/*ChooseCategories block*/
 .WrapperCategories{
     display: flex;
     flex-direction: column;
@@ -12,7 +12,7 @@
     margin: 0 auto;
 }
 
-/*Card Categories block*/
+/*Card ChooseCategories block*/
 .cardsWrapper{
     height: 150px;
     display: flex;
@@ -50,7 +50,7 @@
     color: white;
 }
 
-/*About block*/
+/*Details block*/
 .wrapperAbout{
     width: 1200px;
     position: relative;

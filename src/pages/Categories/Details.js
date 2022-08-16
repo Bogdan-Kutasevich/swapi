@@ -1,33 +1,33 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import { useTransition, animated } from 'react-spring'
 import {Link} from "react-router-dom";
-import {ObjectContext} from '../../../Context/objectContext'
 
 
-const About = () => {
-    const data = useContext(ObjectContext)
-    const aboutFirst = data.about[0]
-    const aboutSecond = data.about[1]
-    const classChange = data.classChange
 
-    const transitions = useTransition (classChange, {
+const Details = ({details, animationCard}) => {
+
+    const aboutFirst = details[0]
+    const aboutSecond = details[1]
+    const urlToMoreInfoPage = aboutFirst ? aboutFirst.url.slice(-2) : '/'
+
+    const transitions = useTransition (animationCard, {
         from: {right:'0px',top:'0px', opacity:0},
         enter: {right:'350px', top:'0px', opacity:1, config:{duration:1000}},
         leave:{opacity:0, config:{duration:0}},
 
 
     })
-    const transitions1 = useTransition (classChange, {
+    const transitions1 = useTransition (animationCard, {
         from: {right:'350px',top:'0px', opacity:1},
         enter: {right:'1200px',top:'0px',opacity:0, config:{duration:1000}},
         leave:{opacity:0},
     })
-    const transitionsText = useTransition (classChange, {
+    const transitionsText = useTransition (animationCard, {
         from: {opacity:0},
         enter: {opacity:1, config:{duration:1000}},
         leave:{opacity:0},
     })
-    const transitionsText1 = useTransition (classChange, {
+    const transitionsText1 = useTransition (animationCard, {
         from: {opacity:1},
         enter: {opacity:0},
         leave:{opacity:0},
@@ -75,9 +75,9 @@ const About = () => {
                             {aboutSecond.cost_in_credits && <p>Cost in credits: {aboutFirst.aboutSecond}</p>}
                             {aboutSecond.manufacturer && <p>Manufacturer: {aboutFirst.aboutSecond}</p>}
                         </animated.div>))}
-            {aboutFirst && <Link to={aboutFirst.name?aboutFirst.name:aboutFirst.title} className='about_btn'>read more</Link>}
+            {aboutFirst && <Link to={urlToMoreInfoPage} className='about_btn'>read more</Link>}
             </div>
     );
 };
 
-export default About;
+export default Details;

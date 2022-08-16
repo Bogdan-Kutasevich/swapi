@@ -6,17 +6,17 @@ import styles from './Card.module.css'
 
 
 
-const Card = ({item, setAbout, setClassChange, classChange}) => {
+const Card = ({item, setDetails, setAnimationCard, animationCard}) => {
 
     const changePlanet = ()=>{
-        setAbout(prevAbout=>{
+        setDetails(prevAbout=>{
             prevAbout.unshift(item)
             if (prevAbout.length>2){
                 prevAbout.pop()
             }
             return prevAbout
         })
-        setClassChange(!classChange)
+        setAnimationCard(!animationCard)
     }
 
     return (
