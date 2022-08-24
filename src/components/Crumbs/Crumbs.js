@@ -8,11 +8,9 @@ const Crumbs = () => {
 
     const breadcrumbs = useBreadcrumbs();
 
-
     return (
         <div className={styles.Crumbs}>
             {breadcrumbs.map(({ breadcrumb }) => {
-
                 return (
                     <div className={styles.linkContainer} key={breadcrumb.key}>
                         <Link to={breadcrumb.key} className={styles.Link}> {`/ ${breadcrumb.props.children}`} </Link>

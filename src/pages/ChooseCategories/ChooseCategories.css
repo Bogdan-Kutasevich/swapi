@@ -1,5 +1,5 @@
 .itemContainer{
-    height: 500px;
+    height: 100%;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -7,7 +7,7 @@
     position: relative;
 }
 .Categories {
-    height: 500px;
+    height: 90vh;
     width: 100%;
     display: flex;
     justify-content: center;

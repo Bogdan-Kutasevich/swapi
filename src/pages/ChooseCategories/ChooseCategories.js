@@ -47,7 +47,6 @@ const ChooseCategories = () => {
                                     <NavLink className='itemLink' key={index} to={elem[0]}>
                                         {elem[0].toUpperCase()}
                                     </NavLink>
-
                                 </div>
                             </Carousel.Item>
                         )

@@ -1,7 +1,7 @@
 import React from 'react';
 import './moreInfo.module.css'
 import {animated, useTransition} from "react-spring";
-import {useParams} from "react-router-dom";
+import {useParams, Link} from "react-router-dom";
 import {useEffect, useState} from "react";
 import stylesCss from './moreInfo.module.css'
 import Requests from "../../requests/requests";
@@ -12,27 +12,43 @@ import loaderLogo from "../../assets/loader.gif";
 
 
 const MoreInfo = () => {
-
+    const params = useParams()
     const [item, setItem] = useState({})
     const [loader, setLoader] = useState(true)
-    const params = useParams()
-    const ignoreParametrs = ['name', 'films', 'url', 'image', 'residents']
+    const [itemProperty, setItemProperty] = useState([])
+
     useEffect(() => {
         setLoader(true)
-
-        Requests.getCategories(`https://swapi.dev/api/${params.categories}/${params.id}`)
+        Requests.getCategories(`https://swapi.dev/api/${params.categories}/${params.moreInfo}/`)
             .then(response => {
                 let data = response.data
                 data = {
                     ...data,
-                    image: Images[data.name]
+                    image: Images[data.name || data.title]
                 }
+
                 setItem(data)
-                console.log(data)
                 setLoader(false)
             })
-    }, [])
+    }, [params.categories, params.moreInfo])
 
+    useEffect(()=>{
+        const itemArr = []
+        Object.keys(item).map(property => {
+            if(typeof item[property] === "number"){
+                return null
+            }else if (property==='image') {
+                return null
+            }else if ((Array.isArray(item[property])) || (item[property].slice(0, 4)==='http')){
+                return null
+            }else {
+                itemArr.push(property)
+            }
+            return null
+        })
+        setItemProperty(itemArr)
+
+    },[item])
 
     const appear = useTransition (true, {
         from: {left:'-1500px'},
@@ -46,23 +62,23 @@ const MoreInfo = () => {
                 {item && appear((styles) => (
                 <animated.div className={stylesCss.moreInfoMain} style={styles}>
                     <>
-                        <h1 className={stylesCss.MoreInfoTitle}>{item.name}</h1>
+                        <h1 className={stylesCss.MoreInfoTitle}>{item.name || item.title}</h1>
                         <div className={stylesCss.MoreInfoWrapper}>
                             <div className={stylesCss.MoreInfoIMG}>
                                 <img src={item.image} alt=''/>
                             </div>
                             <div className={stylesCss.MoreInfoText}>
-                                {Object.keys(item).map(obj=>{
-                                    if(!(ignoreParametrs.includes(obj))){
-                                        return  <p key={obj}>{obj}: {item[obj]}</p>
-                                    }
-                                    return null
+                                {itemProperty.map((property)=>{
+                                    return  <p key={property}>{property}: {item[property]}</p>
                                 })}
                                 <div className={stylesCss.MoreInfoTextBtns}>
                                     <AddBtn/>
                                     <LikeBtn/>
+                                    <Link to={`related`} className={stylesCss.MoreInfoRelated}>Related</Link>
+                                    <Link to={`/${params.categories}`} className={stylesCss.MoreInfoRelated}>Back to the choice</Link>
                                 </div>
                             </div>
+
                         </div>
                     </>
                 </animated.div>))}

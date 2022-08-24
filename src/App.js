@@ -8,23 +8,32 @@ import React from "react";
 import {Route, Routes} from "react-router-dom";
 import MoreInfo from "./pages/MoreInfo/MoreInfo";
 import ChooseCategories from "./pages/ChooseCategories/ChooseCategories";
+import Related from "./pages/Related/Related";
+import SignUp from "./pages/SignUp/SignUp";
+import Logout from "./pages/Logout/Logout";
+import {AuthProvider} from "./context/authContext";
 
 function App() {
 
     return (
-        <div className="App">
-            <Header/>
-            <Crumbs/>
-            <div className='ContentMain'>
-                <Routes>
-                    <Route path='/' element={<ChooseCategories/>}/>
-                    <Route path='/:categories/' element={<Categories/>}/>
-                    <Route path='/:categories/:id' element={<MoreInfo/>}/>
-                    <Route path='/login' element={<Login/>}/>
-                </Routes>
+        <AuthProvider>
+            <div className="App">
+                <Header/>
+                <Crumbs/>
+                <div className='ContentMain'>
+                    <Routes>
+                        <Route path='/' element={<ChooseCategories/>}/>
+                        <Route path='/:categories/' element={<Categories/>}/>
+                        <Route path='/:categories/:moreInfo/' element={<MoreInfo/>}/>
+                        <Route path='/:categories/:moreInfo/Related' element={<Related/>}/>
+                        <Route path='/login' element={<Login />}/>
+                        <Route path='/signUp' element={<SignUp/>}/>
+                        <Route path='/logout' element={<Logout />}/>
+                    </Routes>
+                </div>
+                <Footer className='footerWrapper'/>
             </div>
-            <Footer className='footerWrapper'/>
-        </div>
+        </AuthProvider>
     );
 }
 

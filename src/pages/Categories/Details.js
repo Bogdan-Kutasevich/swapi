@@ -8,7 +8,9 @@ const Details = ({details, animationCard}) => {
 
     const aboutFirst = details[0]
     const aboutSecond = details[1]
-    const urlToMoreInfoPage = aboutFirst ? aboutFirst.url.slice(-2) : '/'
+
+
+
 
     const transitions = useTransition (animationCard, {
         from: {right:'0px',top:'0px', opacity:0},
@@ -75,7 +77,9 @@ const Details = ({details, animationCard}) => {
                             {aboutSecond.cost_in_credits && <p>Cost in credits: {aboutFirst.aboutSecond}</p>}
                             {aboutSecond.manufacturer && <p>Manufacturer: {aboutFirst.aboutSecond}</p>}
                         </animated.div>))}
-            {aboutFirst && <Link to={urlToMoreInfoPage} className='about_btn'>read more</Link>}
+            {aboutFirst && <Link to={`/${aboutFirst.url.slice(22)}/`} className='about_btn'>
+                read more
+            </Link>}
             </div>
     );
 };

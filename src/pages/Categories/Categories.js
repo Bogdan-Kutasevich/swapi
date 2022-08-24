@@ -40,7 +40,6 @@ const Categories = () => {
                     elem.image = Images[addingImage]
                     return elem
                 })
-                console.log(data)
                 return data
             })
             .then(data => {
@@ -57,7 +56,7 @@ const Categories = () => {
             {loader && <div className='loader'><img src={loaderLogo} alt='Loading...'/></div>}
             {items && <div className='WrapperCategories'>
                 {/*animation block*/}
-                <Details details={details} animationCard={animationCard}/>
+                <Details details={details} animationCard={animationCard} currentPage={currentPage}/>
                 {/*cards*/}
                 <div className='cardsWrapper'>
                     {items.map(item => {
