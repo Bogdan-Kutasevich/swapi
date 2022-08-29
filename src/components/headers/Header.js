@@ -30,7 +30,6 @@ const Header = () => {
     }, [currentUser]);
 
 
-
     const scrollHandler = ()=>{
         if(window.scrollY>350){
             setUp(true)
@@ -56,7 +55,7 @@ const Header = () => {
                 { burger && <MenuBurger className={styles.menuBurger}/> }
                 { !burger && <div className={styles.navMenu}>
                     <Link to='/'><img src={logo} alt="logo"/></Link>
-                    <div className={styles.header_home}>
+                    <div className={styles.headerToOficialSite}>
                         <a href='https://www.starwars.com/'
                            target="_blank"
                            rel="noopener noreferrer">
@@ -65,6 +64,7 @@ const Header = () => {
                     </div>
                     <div className={styles.loginWrraper}>
                         {currentUser && <div className={styles.loginWelcome}>Welcome, {username}</div>}
+                        {currentUser && <Link to='/myPage' className={styles.login}>My Page</Link>}
                         {!currentUser && <Link to='/signUp' className={styles.login}>SIGN UP</Link>}
                         <Link to={currentUser ? '/logout': '/login'} className={styles.login}>
                             {currentUser ? 'Log Out' : 'Log In'}

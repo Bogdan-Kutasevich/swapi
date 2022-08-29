@@ -12,3 +12,9 @@
     color: black;
     background-color: white;
 }
+
+.countOfLikes{
+    align-self: center;
+    justify-self: center;
+    font-size: 24px;
+}

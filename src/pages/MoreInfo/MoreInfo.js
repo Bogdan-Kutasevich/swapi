@@ -26,7 +26,6 @@ const MoreInfo = () => {
                     ...data,
                     image: Images[data.name || data.title]
                 }
-
                 setItem(data)
                 setLoader(false)
             })
@@ -47,7 +46,6 @@ const MoreInfo = () => {
             return null
         })
         setItemProperty(itemArr)
-
     },[item])
 
     const appear = useTransition (true, {
@@ -59,6 +57,7 @@ const MoreInfo = () => {
     return (
             <>
                 {loader && <div className='loader'><img src={loaderLogo} alt='Loading...'/></div>}
+                <div className={stylesCss.moreInfoMainWrapper}>
                 {item && appear((styles) => (
                 <animated.div className={stylesCss.moreInfoMain} style={styles}>
                     <>
@@ -72,16 +71,16 @@ const MoreInfo = () => {
                                     return  <p key={property}>{property}: {item[property]}</p>
                                 })}
                                 <div className={stylesCss.MoreInfoTextBtns}>
-                                    <AddBtn/>
-                                    <LikeBtn/>
-                                    <Link to={`related`} className={stylesCss.MoreInfoRelated}>Related</Link>
-                                    <Link to={`/${params.categories}`} className={stylesCss.MoreInfoRelated}>Back to the choice</Link>
+                                    <AddBtn item={item}/>
+                                    <Link to={`related`} className={stylesCss.MoreInfoRelated}>Related stuff</Link>
+                                    <LikeBtn itemTitle = {item.name || item.title}/>
                                 </div>
                             </div>
 
                         </div>
                     </>
                 </animated.div>))}
+                </div>
             </>
     );
 };

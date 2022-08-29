@@ -8,7 +8,6 @@
     height: 70px;
     width: 100%;
 }
-
 .navMenu{
     width: 100%;
     height: 100%;
@@ -19,28 +18,43 @@
 .navMenu img{
     width: 70px;
     height: 70px;
+    margin-left: 10px;
 }
-
-.header_home{
+.headerToOficialSite{
     margin-left: 20px;
     flex-grow: 1;
 }
-.header_home a{
+.headerToOficialSite a{
     color: white;
     font-size: 18px;
     border: 1px solid orange;
     padding: 10px;
     border-radius: 20px;
 }
-
+.headerToOficialSite a:hover{
+    color: orange;
+}
+.loginWrraper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-right: 10px;
+}
+.loginWelcome{
+    font-size: 24px;
+    color: orange;
+}
 .login{
     background-color: black;
     color: white;
     font-size: 18px;
-    margin-right: 20px;
     border: 1px solid orange;
     padding: 15px;
     border-radius: 20px;
+}
+.login:hover{
+    color: orange;
 }
 
 .burgerHeader{
@@ -77,13 +91,3 @@
     cursor: pointer;
 }
 
-.loginWrraper{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-}
-.loginWelcome{
-    font-size: 24px;
-    color: orange;
-}

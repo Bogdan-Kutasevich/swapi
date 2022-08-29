@@ -1,4 +1,9 @@
+.RelatedMainWrapper{
+    position: relative;
+    height: 80vh;
+}
 .moreInfoMain {
+    position: absolute;
     height: 100%;
     width: 100%;
     display: flex;
@@ -52,6 +57,7 @@
     background-color: orangered;
     transition: 1s;
     flex-grow: 0;
+    text-align: center;
 }
 .MoreInfoReturn:hover{
     color: black;

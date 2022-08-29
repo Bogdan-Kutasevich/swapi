@@ -6,7 +6,7 @@ import stylesCss from './Related.module.css'
 import Requests from "../../requests/requests";
 import {Images} from "../../imgLinks/imgLinks";
 import loaderLogo from "../../assets/loader.gif";
-import ReletedCards from "./ReletedCards";
+import RelatedLink from "../../components/RelatedLink/RelatedLink";
 
 
 const Related = () => {
@@ -65,10 +65,10 @@ const Related = () => {
     return (
         <>
             {loader && <div className='loader'><img src={loaderLogo} alt='Loading...'/></div>}
+            <div className={stylesCss.RelatedMainWrapper}>
             {item && appear((styles) => (
                 <animated.div className={stylesCss.moreInfoMain} style={styles}>
                     <>
-
                         <div className={stylesCss.relatedTitleblock}>
                             <h1 className={stylesCss.relatedTitle}>{item.name || item.title}</h1>
                             <Link to={`/${params.categories}/${params.moreInfo}`} className={stylesCss.returnBtn} >Return back</Link>
@@ -85,7 +85,7 @@ const Related = () => {
                                                 <h2>{categorie.category}:</h2>
                                                 {<div className={stylesCss.RelatedCardWrapper}>
                                                     {categorie.link.map((link)=>{
-                                                        return <ReletedCards categorieLink={link} title={categorie.category}/>
+                                                        return <RelatedLink categorieLink={link} title={categorie.category}/>
                                                     })}
                                                 </div>}
                                             </>
@@ -95,7 +95,7 @@ const Related = () => {
                                         <>
                                             <h2 className={stylesCss.titleCard}>{categorie.category}:</h2>
                                             <div className={stylesCss.RelatedCardWrapper}>
-                                                <ReletedCards categorieLink={categorie.link}/>
+                                                <RelatedLink categorieLink={categorie.link}/>
                                             </div>
                                         </>
                                     )
@@ -104,6 +104,7 @@ const Related = () => {
                         </div>
                     </>
                 </animated.div>))}
+            </div>
         </>
     );
 };

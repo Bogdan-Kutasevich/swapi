@@ -21,7 +21,7 @@ const Logout = () => {
             <h1 className={styles.logoutTitle}>Are you sure?</h1>
             <div>
                 <button className={styles.logoutBtn} onClick={logOut}>Yes</button>
-                <button className={styles.logoutBtn} onClick={{returnBack}}>Back</button>
+                <button className={styles.logoutBtn} onClick={returnBack}>Back</button>
             </div>
         </div>
     );

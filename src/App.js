@@ -12,6 +12,7 @@ import Related from "./pages/Related/Related";
 import SignUp from "./pages/SignUp/SignUp";
 import Logout from "./pages/Logout/Logout";
 import {AuthProvider} from "./context/authContext";
+import MyPage from "./pages/MyPage/MyPage";
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
                         <Route path='/login' element={<Login />}/>
                         <Route path='/signUp' element={<SignUp/>}/>
                         <Route path='/logout' element={<Logout />}/>
+                        <Route path='/myPage' element={<MyPage />}/>
                     </Routes>
                 </div>
                 <Footer className='footerWrapper'/>
