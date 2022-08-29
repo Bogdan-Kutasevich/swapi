@@ -3,11 +3,13 @@ import {useEffect, useState} from "react";
 import Requests from "../../requests/requests";
 import {useParams} from "react-router-dom";
 import Pagination from "../../components/Pagination/pagination";
-import './Categories.css'
+import styles from './Categories.module.css'
 import loaderLogo from '../../assets/loader.gif'
 import {Images} from '../../imgLinks/imgLinks'
-import Details from "./Details";
+import Details from "../../components/Details/Details";
 import Card from "../../components/Card/Card";
+import {ref, set, onValue} from "firebase/database";
+import {db} from "../../Base";
 
 
 const Categories = () => {
@@ -38,12 +40,34 @@ const Categories = () => {
                 data = data.map(elem => {
                     let addingImage = elem.name ? elem.name : elem.title
                     elem.image = Images[addingImage]
+                    onValue(ref(db, "cards/"), (snapshot) => {
+                        if(snapshot.val()){
+                            const list = Object.keys(snapshot.val());
+                            if(list.includes((elem.name || elem.title))){
+
+                            } else {
+                                set(ref(db, "cards/" + (elem.name || elem.title)),{
+                                    countOfLike:0,
+                                    comments:[]
+                                })
+                            }
+                        }else{
+                            set(ref(db, "cards/" + (elem.name || elem.title)),{
+                                countOfLike:0,
+                                comments:[]
+                            })
+                        }
+
+                    }, {
+                        onlyOnce: true
+                    });
                     return elem
                 })
                 return data
             })
             .then(data => {
                 setItems(data)
+
                 setLoader(false)
             })
             .finally(
@@ -53,15 +77,15 @@ const Categories = () => {
 
     return (
         <>
-            {loader && <div className='loader'><img src={loaderLogo} alt='Loading...'/></div>}
-            {items && <div className='WrapperCategories'>
+            {loader && <div className={styles.loader}><img src={loaderLogo} alt='Loading...'/></div>}
+            {items && <div className={styles.WrapperCategories}>
                 {/*animation block*/}
                 <Details details={details} animationCard={animationCard} currentPage={currentPage}/>
                 {/*cards*/}
-                <div className='cardsWrapper'>
+                <div className={styles.cardsWrapper}>
                     {items.map(item => {
                         return (
-                            <Card key={item.title}
+                            <Card key={item.title || item.name}
                                   item={item}
                                   setDetails={setDetails}
                                   setAnimationCard={setAnimationCard}

@@ -27,14 +27,13 @@ const SignUp = () => {
                 set(ref(db, "users/" + userCredential.user.uid), {
                     firstName: input.firstName,
                     lastName: input.lastName,
-                    email: input.email
+                    email: input.email,
+                    cardsList:[]
                 });
             })
             .catch((error) => console.log(error));
         navigate("/");
     }
-
-
 
     return (
         <div className={styles.loginWrapper}>

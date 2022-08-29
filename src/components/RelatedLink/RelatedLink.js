@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
 import {useEffect} from "react";
 import Requests from "../../requests/requests";
-import styles from './ReletedCards.module.css'
+import styles from './ReletedLink.module.css'
 import {Link} from "react-router-dom";
 
 
-const ReletedCards = ({categorieLink}) => {
+const RelatedLink = ({categorieLink}) => {
     const [reletedCardItem, setReletedCardItem] =  useState()
 
     useEffect(() => {
@@ -26,4 +26,4 @@ const ReletedCards = ({categorieLink}) => {
     );
 };
 
-export default ReletedCards;
+export default RelatedLink;

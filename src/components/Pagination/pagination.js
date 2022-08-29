@@ -1,5 +1,5 @@
 import React from 'react';
-import './pagination.css'
+import styles from './pagination.module.css'
 
 
 
@@ -14,9 +14,9 @@ const Pagination = ({currentPage, setCurrentPage, numberOfPages}) => {
 
 
     return (
-        <div className='pagination'>
+        <div className={styles.pagination}>
             {pages.map(page=>(
-                <div className={(currentPage === page)?'page-active':'page'}
+                <div className={(currentPage === page)? styles.pageActive:styles.page}
                      key={page}
                      onClick={()=>{setCurrentPage(page)}}>
                     {page}
