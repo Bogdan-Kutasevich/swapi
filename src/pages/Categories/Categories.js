@@ -48,13 +48,15 @@ const Categories = () => {
                             } else {
                                 set(ref(db, "cards/" + (elem.name || elem.title)),{
                                     countOfLike:0,
-                                    comments:[]
+                                    comments:[],
+                                    userLikeList:[]
                                 })
                             }
                         }else{
                             set(ref(db, "cards/" + (elem.name || elem.title)),{
                                 countOfLike:0,
-                                comments:[]
+                                comments:[],
+                                userLikeList:[]
                             })
                         }
 

@@ -13,8 +13,8 @@
     margin: 0 auto;
     position: relative;
     border-bottom: 1px solid orange;
+    flex-grow: 1;
 }
-.footerWrapper{
-}
+
 
 

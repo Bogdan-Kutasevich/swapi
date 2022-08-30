@@ -9,7 +9,7 @@ import Details from "../../components/Details/Details";
 
 const MyPage = () => {
     const { currentUser } = useContext(AuthContext);
-    const [userInfo, setUserInfo] = useState(null);
+    const [userInfo, setUserInfo] = useState({});
     const [details, setDetails] = useState([])
     const [animationCard, setAnimationCard] = useState(false)
 
@@ -27,10 +27,11 @@ const MyPage = () => {
 
     return (
         <div className={styles.myPageWrraper}>
-            {userInfo && <h1 className={styles.title}>{userInfo.firstName} {userInfo.lastName}'s сollection</h1>}
-            <Details details={details} animationCard={animationCard} />
+            {!userInfo.cardsList && <h1 className={styles.title}>You have no cards yet</h1>}
+            {userInfo.cardsList && <h1 className={styles.title}>{userInfo.firstName} {userInfo.lastName}'s сollection</h1>}
+            {userInfo.cardsList && <Details details={details} animationCard={animationCard} />}
             {userInfo && <div className={styles.collectionWrapper}>
-                {Object.values(userInfo.cardsList).map((url)=>{
+                {userInfo.cardsList && Object.values(userInfo.cardsList).map((url)=>{
                     return <MyPageCard url={url}
                                        setDetails={setDetails}
                                        setAnimationCard={setAnimationCard}

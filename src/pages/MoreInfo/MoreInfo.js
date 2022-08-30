@@ -9,6 +9,7 @@ import {Images} from "../../imgLinks/imgLinks";
 import AddBtn from "../../components/Buttons/Add/AddBtn";
 import LikeBtn from "../../components/Buttons/Like/LikeBtn";
 import loaderLogo from "../../assets/loader.gif";
+import Comments from "../../components/Comments/Comments";
 
 
 const MoreInfo = () => {
@@ -78,6 +79,7 @@ const MoreInfo = () => {
                             </div>
 
                         </div>
+                        <Comments itemTitle = {item.name || item.title}/>
                     </>
                 </animated.div>))}
                 </div>
