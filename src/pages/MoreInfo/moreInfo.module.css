@@ -1,9 +1,10 @@
 .moreInfoMainWrapper{
     position: relative;
-    height: 100%;
+    height: 80vh;
 }
 .moreInfoMain {
-    position: relative;
+    position: absolute;
+
     width: 100%;
     display: flex;
     flex-direction: column;
