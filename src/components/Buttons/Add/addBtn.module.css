@@ -1,5 +1,7 @@
+
 .addBtn{
     width: 100px;
+    height: 35px;
     padding: 8px;
     color: white;
     border: 2px solid white;
@@ -12,3 +14,21 @@
     color: black;
     background-color: white;
 }
+.wasAddBtn{
+    width: 100px;
+    padding: 8px;
+    color: white;
+    border: 2px solid white;
+    border-radius: 20px;
+    background-color: grey;
+}
+.addBtnDisabled{
+    width: 100px;
+    padding: 8px;
+    color: white;
+    border: 2px solid white;
+    border-radius: 20px;
+    background-color: grey;
+}
+
+

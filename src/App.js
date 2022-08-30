@@ -33,7 +33,7 @@ function App() {
                         <Route path='/myPage' element={<MyPage />}/>
                     </Routes>
                 </div>
-                <Footer className='footerWrapper'/>
+                <Footer/>
             </div>
         </AuthProvider>
     );

@@ -12,7 +12,17 @@
     color: black;
     background-color: white;
 }
-
+.LikeBtnDisabled{
+    width: 100px;
+    padding: 8px;
+    color: white;
+    border: 2px solid white;
+    border-radius: 20px;
+    background-color: grey;
+}
+.LikeBtnDisabled:hover{
+    cursor: default;
+}
 .countOfLikes{
     align-self: center;
     justify-self: center;
