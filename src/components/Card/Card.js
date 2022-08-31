@@ -20,12 +20,9 @@ const Card = ({item, setDetails, setAnimationCard, animationCard}) => {
     }
 
     return (
-        <div className={styles.mainCard} onClick={changePlanet}
-             style={{backgroundImage: `url(${item.image})`, backgroundSize:'cover', backgroundRepeat:'no-repeat'}}>
-            <div className={styles.children}>
-                {item.name}
-                {item.title}
-            </div>
+        <div className={styles.mainCard} onClick={changePlanet}>
+            <img className={styles.image} src={item.image} alt=""/>
+            <div className={styles.text}>{item.name}{item.title}</div>
         </div>
     );
 };

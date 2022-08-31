@@ -1,32 +1,34 @@
-.CardWrapper{
-    display: flex;
-    flex-direction: column;
-}
-
 .mainCard{
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     color: white;
     cursor: pointer;
     transition: width 0.5s, height 0.5s;
     margin-left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
 }
 .mainCard:hover{
-    width: 120px;
-    height: 120px;
+    width: 140px;
+    height: 140px;
 }
-
-
-.children{
+.text{
     width: 100%;
     height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     font-size: 18px;
-    margin-top: 40%;
     background: rgba(0,0,0,0.7);
     text-align: center;
+    color: orange;
+    margin-top: 5px;
 }
 
+.image{
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    transition: width 0.5s, height 0.5s;
+}
 

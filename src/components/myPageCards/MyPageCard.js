@@ -34,10 +34,9 @@ const MyPageCard = ({url, setDetails, setAnimationCard, animationCard}) => {
     return (
         <>
             {item && <div onClick={changePlanet}
-                className={styles.mainCard} style={{backgroundImage: `url(${item.image})`, backgroundSize:'cover', backgroundRepeat:'no-repeat'}}>
-                        <div className={styles.children} >
-                            {item.name ? item.name : item.title}
-                        </div>
+                className={styles.mainCard}>
+                <img className={styles.image} src={item.image} alt=""/>
+                <div className={styles.text}>{item.name}{item.title}</div>
             </div>}
         </>
     );
