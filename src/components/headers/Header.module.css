@@ -1,11 +1,11 @@
 .headerContainer{
-    height: 70px;
     width: 100%;
+    height: 7vh;
     border-bottom: 1px solid orange;
+    display: flex;
 }
 .Header{
     color: white;
-    height: 70px;
     width: 100%;
 }
 .navMenu{
@@ -17,7 +17,7 @@
 }
 .navMenu img{
     width: 70px;
-    height: 70px;
+    height: 90%;
     margin-left: 10px;
 }
 .headerToOficialSite{
@@ -50,44 +50,34 @@
     color: white;
     font-size: 18px;
     border: 1px solid orange;
-    padding: 15px;
+    padding: 10px;
     border-radius: 20px;
 }
 .login:hover{
     color: orange;
 }
 
-.burgerHeader{
-    height: 80px;
-    width: 50px;
-    left: 5px;
-    top: 5px;
-    position: fixed;
-    z-index: 10;
-    animation: burger 1s linear;
-    animation-fill-mode: forwards;
-}
-
-@keyframes burger {
-   0%{
-
-    opacity: 0;
-   }
-    100%{
-
-    opacity: 1;
-    }
-}
 .up{
     position: fixed;
     width: 100px;
     height: 100px;
     right: 0;
     bottom: 0;
+    color: white;
+    cursor: pointer;
+    z-index: 20;
+    font-size: 36px;
 }
 .up img{
     width: 100px;
     height: 100px;
     cursor: pointer;
+}
+
+@media (max-width: 750px){
+    .navMenu{
+        display: none;
+    }
+
 }
 

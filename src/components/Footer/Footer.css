@@ -1,9 +1,9 @@
 .Footer{
-    height: 40px;
+    height: 5vh;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-grow: 0;
+    flex-grow: 1;
     color: rgba(249, 180, 45, 0.3);
 }

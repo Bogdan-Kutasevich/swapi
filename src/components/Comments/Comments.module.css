@@ -1,9 +1,13 @@
 .commentsMainWrapper{
+    width: 70%;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     margin-top: 20px;
 }
 .commentsAddWrapper{
+    width: 100%;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -14,9 +18,9 @@
     color: white;
 }
 .commentsAddInput{
-    padding: 5px;
-    width: 400px;
-    height: 60px;
+    padding: 10px;
+    width: 100%;
+    height: 100px;
     border-radius: 10px;
 }
 .commentsAddBtn{
@@ -33,14 +37,21 @@
 .commentsAddBtn:hover{
     color: black;
     background-color: white;
+
+}
+.commentsAddedMainWrapper{
+    height: 100%;
+    width: 100%;
+    margin: 0 auto 20px;
 }
 .commentsAddedWrapper{
-    height: 100%;
-    font-size: 18px;
+    word-wrap: break-word;
+    font-size: 24px;
     display: flex;
     align-items: center;
     color: white;
     margin-top: 20px;
+
 }
 .commentsAddedUser{
     margin: 0 20px 0 0;

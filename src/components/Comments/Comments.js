@@ -52,20 +52,21 @@ const Comments = ({itemTitle}) => {
 
     return (
         <div className={styles.commentsMainWrapper}>
-
             <div className={styles.commentsAddWrapper}>
                 <p className={styles.commentsAddTitle}>Add your comment:</p>
-                <input type="text" className={styles.commentsAddInput} value={input} onChange={inputHendler}/>
+                <textarea type="textarea" className={styles.commentsAddInput} value={input} onChange={inputHendler}/>
                 <button className={styles.commentsAddBtn} onClick={addComment}>add comment</button>
             </div>
+            <div className={styles.commentsAddedMainWrapper}>
                 {allComments.map((comment)=>{
                     return (
                         <div className={styles.commentsAddedWrapper} key={comment.text}>
-                            <h3 className={styles.commentsAddedUser}>{comment.user}</h3>
+                            <h3 className={styles.commentsAddedUser}>{comment.user}:</h3>
                             <p className={styles.commentsAddedText}>{comment.text}</p>
                         </div>
                     )
                 })}
+            </div>
         </div>
 
     );

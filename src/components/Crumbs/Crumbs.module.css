@@ -1,5 +1,5 @@
 .Crumbs{
-    height: 35px;
+    height: 3vh;
     width: 100%;
     display: flex;
     justify-content: flex-start;
@@ -15,4 +15,12 @@
 }
 .Link:hover{
     color: orange;
+}
+@media (max-width: 750px){
+    .Crumbs{
+        height: 50px;
+    }
+    .Link{
+        font-size: 18px;
+    }
 }

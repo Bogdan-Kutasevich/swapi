@@ -1,4 +1,4 @@
-import './ChooseCategories.css'
+import styles from './ChooseCategories.module.css'
 import React, {useState, useEffect} from "react";
 import {NavLink} from "react-router-dom";
 import Carousel from "react-bootstrap/Carousel";
@@ -31,23 +31,20 @@ const ChooseCategories = () => {
 
     if(loader){
         return(
-            <div className='loader'><img src={loaderLogo} alt='Loading...'/></div>
+            <div className={styles.loader}><img src={loaderLogo} alt='Loading...'/></div>
         )
     }else{
         return (
-            <Carousel className='Carousel'>
+            <Carousel>
                 {categories.map(
                     (elem, index) => {
                         return (
                             <Carousel.Item key={index}>
-                                <div className='itemContainer'>
-                                    <div className='Categories' style={{backgroundImage: `url(${elem[2]})`, backgroundSize:'cover'}}>
-
+                                    <div className={styles.CarouselImg} style={{backgroundImage: `url(${elem[2]})`}}>
                                     </div>
-                                    <NavLink className='itemLink' key={index} to={elem[0]}>
+                                    <NavLink className={styles.itemLink} key={index} to={elem[0]}>
                                         {elem[0].toUpperCase()}
                                     </NavLink>
-                                </div>
                             </Carousel.Item>
                         )
                     })}

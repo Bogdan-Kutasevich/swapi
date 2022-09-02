@@ -1,8 +1,7 @@
 import React from 'react';
-import {animated, useTransition} from "react-spring";
 import {Link, useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
-import stylesCss from './Related.module.css'
+import styles from './Related.module.css'
 import Requests from "../../requests/requests";
 import {Images} from "../../imgLinks/imgLinks";
 import loaderLogo from "../../assets/loader.gif";
@@ -56,34 +55,24 @@ const Related = () => {
         setRelatedItems(relatedArr)
     }, [item])
 
-    const appear = useTransition(true, {
-        from: {left: '-1500px'},
-        enter: {left: '0px', config: {duration: 500}},
-        leave: {left: '-1500px', config: {duration: 500}}
-    })
 
     return (
         <>
-            {loader && <div className='loader'><img src={loaderLogo} alt='Loading...'/></div>}
-            <div className={stylesCss.RelatedMainWrapper}>
-            {item && appear((styles) => (
-                <animated.div className={stylesCss.moreInfoMain} style={styles}>
-                    <>
-                        <div className={stylesCss.relatedTitleblock}>
-                            <h1 className={stylesCss.relatedTitle}>{item.name || item.title}</h1>
-                            <Link to={`/${params.categories}/${params.moreInfo}`} className={stylesCss.returnBtn} >Return back</Link>
+            {loader && <div className={styles.loader}><img src={loaderLogo} alt='Loading...'/></div>}
+            {((Object.keys(item)).length) &&  <div className={styles.relatedMainWrapper}>
+                        <div className={styles.relatedTitleblock}>
+                            <h1 className={styles.relatedTitle}>{item.name || item.title}</h1>
+                            <Link to={`/${params.categories}/${params.moreInfo}`} className={styles.relatedReturnBtn} >Return back</Link>
                         </div>
-                        <div className={stylesCss.MoreInfoWrapper}>
-                            <div className={stylesCss.MoreInfoIMG}>
-                                <img src={item.image} alt=''/>
-                            </div>
-                            <div className={stylesCss.MoreInfoText}>
+                        <div className={styles.relatedInfoWrapper}>
+                            <img className={styles.relatedInfoIMG} src={item.image} alt=''/>
+                            <div className={styles.relatedInfoText}>
                                 {relatedItems.map((categorie)=>{
                                     if(Array.isArray(categorie.link)){
                                         return(
                                             <>
-                                                <h2>{categorie.category}:</h2>
-                                                {<div className={stylesCss.RelatedCardWrapper}>
+                                                <h2 className={styles.titleCard}>{(categorie.category).toUpperCase()}:</h2>
+                                                {<div className={styles.relatedCardWrapper}>
                                                     {categorie.link.map((link)=>{
                                                         return <RelatedLink categorieLink={link} title={categorie.category}/>
                                                     })}
@@ -93,8 +82,8 @@ const Related = () => {
                                     }
                                     return (
                                         <>
-                                            <h2 className={stylesCss.titleCard}>{categorie.category}:</h2>
-                                            <div className={stylesCss.RelatedCardWrapper}>
+                                            <h2 className={styles.titleCard}>{(categorie.category).toUpperCase()}:</h2>
+                                            <div className={styles.relatedCardWrapper}>
                                                 <RelatedLink categorieLink={categorie.link}/>
                                             </div>
                                         </>
@@ -102,9 +91,7 @@ const Related = () => {
                                 })}
                             </div>
                         </div>
-                    </>
-                </animated.div>))}
-            </div>
+                </div>}
         </>
     );
 };

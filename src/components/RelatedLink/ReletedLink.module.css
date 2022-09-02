@@ -1,8 +1,9 @@
 .linkRelatedCard{
-   display: flex;
-    justify-content: center;
-    align-items: center;
     margin-left: 10px;
-    margin-bottom: 10px;
-    font-size: 16px;
+    margin-bottom: 5px;
+    color: orange;
+    opacity: 0.8;
+}
+.linkRelatedCard:hover{
+    color: darkgrey;
 }

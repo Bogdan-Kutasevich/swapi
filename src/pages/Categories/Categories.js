@@ -79,8 +79,9 @@ const Categories = () => {
 
     return (
         <>
+            <h1 className={styles.categoriesTitle}>{(params.categories).toUpperCase()}</h1>
             {loader && <div className={styles.loader}><img src={loaderLogo} alt='Loading...'/></div>}
-            {items && <div className={styles.WrapperCategories}>
+            {(items && !loader) && <div className={styles.WrapperCategories}>
                 {/*animation block*/}
                 <Details details={details} animationCard={animationCard} currentPage={currentPage}/>
                 {/*cards*/}

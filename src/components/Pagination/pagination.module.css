@@ -1,18 +1,51 @@
 /*Pagination block*/
 .pagination{
+    height: 40px;
     display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 24px;
     margin: 0 auto;
+    border: 1px solid white;
+    margin-bottom: 10px;
+    border-radius: 10px;
+
 }
 .pageActive{
-    color: orange;
+    color: black;
     margin-left: 10px;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    border: 1px solid black;
+    padding: 4px;
+    border-radius: 50%;
+    background-color: orange;
 }
 .page{
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    border: 1px solid black;
+    padding: 4px;
+    border-radius: 50%;
     cursor: pointer;
     margin-left: 10px;
     color: white;
 }
 .page:hover{
-    color: darkgrey;
+    background-color: darkgrey;
+    color: black;
+}
+@media (max-width: 750px) {
+    .pagination{
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        margin: 0 auto 10px;
+        border: 1px solid white;
+        border-radius: 10px;
+    }
 }

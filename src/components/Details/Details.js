@@ -9,17 +9,30 @@ const Details = ({details, animationCard}) => {
 
     const aboutFirst = details[0]
     const aboutSecond = details[1]
+    const screenWidth = window.screen.width
+    let transitionRight = 0
+    let transition1Right = 0
+    let transitionTop = 0
+
+    if(screenWidth>749){
+            transitionRight = '350px'
+            transition1Right = '1200px'
+            transitionTop = '0px'
+        }else{
+        transitionRight = '0px'
+        transition1Right = '400px'
+        transitionTop = '-50px'
+    }
+
 
     const transitions = useTransition (animationCard, {
-        from: {right:'0px',top:'0px', opacity:0},
-        enter: {right:'350px', top:'0px', opacity:1, config:{duration:1000}},
+        from: {right:'0px',top:transitionTop, opacity:0},
+        enter: {right: transitionRight, top:transitionTop, opacity:1, config:{duration:1000}},
         leave:{opacity:0, config:{duration:0}},
-
-
     })
     const transitions1 = useTransition (animationCard, {
-        from: {right:'350px',top:'0px', opacity:1},
-        enter: {right:'1200px',top:'0px',opacity:0, config:{duration:1000}},
+        from: {right: transitionRight,top:transitionTop, opacity:1},
+        enter: {right:transition1Right,top:transitionTop,opacity:0, config:{duration:1000}},
         leave:{opacity:0},
     })
     const transitionsText = useTransition (animationCard, {
@@ -34,7 +47,6 @@ const Details = ({details, animationCard}) => {
     })
 
     return (
-
         <div className={styleCss.wrapperAbout}>
             {!aboutFirst && <div className={styleCss.aboutEmpty}>
                     YOUR CHOICE...
@@ -78,7 +90,7 @@ const Details = ({details, animationCard}) => {
             {aboutFirst && <Link to={`/${aboutFirst.url.slice(22)}/`} className={styleCss.about_btn}>
                 read more
             </Link>}
-            </div>
+        </div>
     );
 };
 

@@ -1,39 +1,56 @@
-.moreInfoMainWrapper{
-    position: relative;
-    height: 100%;
-}
-.moreInfoMain {
-    position: relative;
+.loader{
     width: 100%;
+    height: 790px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loader img{
+    width: 90px;
+    height: 90px;
+    opacity: 0.7;
+}
+.MoreInfoMain {
+    min-height: 790px;
+    width: 50%;
+    margin: 20px auto 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20px;
+    justify-content: center;
 }
 
 .MoreInfoTitle{
+    height: 10%;
     color: white;
     font-size: 48px;
 }
 .MoreInfoWrapper{
     color: white;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    height: 70%;
 }
 .MoreInfoIMG img{
     height: 400px;
 }
 
 .MoreInfoText{
-    align-self: center;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-left: 100px;
 }
-.MoreInfoText p{
+.moreInfoProperty{
     font-size: 24px;
     margin-bottom: 2px;
-
+    color: orange;
+    opacity: 0.8;
+}
+.moreInfoProperty span{
+    font-size: 24px;
+    color: white;
 }
 .MoreInfoTextBtns{
     margin-top: 10px;
@@ -81,4 +98,36 @@
     color: white;
 }
 
+@media (max-width: 750px){
+    .loader{
+        width: 100%;
+        height: 500px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .MoreInfoMain {
+        min-height: 400px;
+        width: 100%;
+    }
+    .MoreInfoWrapper{
+        flex-direction: column;
+        gap: 10px;
+        height: 70%;
+    }
+    .MoreInfoIMG img{
+        height: 200px;
+    }
+    .moreInfoProperty{
+        font-size: 16px;
+        margin-bottom: 2px;
+        color: orange;
+        opacity: 0.8;
+    }
+    .moreInfoProperty span{
+        font-size: 16px;
+        color: white;
+    }
+
+}
 
